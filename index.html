@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Your Way</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      height: 100%;
+      width: 100%;
+      background: #fdf6ec;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .slide {
+      max-width: 500px;
+      width: 90%;
+      height: 60vh;
+      padding: 30px;
+      background: #fff9f0;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      display: none;
+      transition: all 0.5s ease-in-out;
+      /* overflow-y: auto; */
+    }
+    .active {
+      display: block;
+    }
+    .btn, .option {
+      margin: 15px auto;
+      padding: 12px 24px;
+      background: #ffb347;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .btn:hover, .option:hover {
+      background: #ffa726;
+    }
+    .verse {
+      margin: 20px 0;
+      font-style: italic;
+      font-size: 1.1em;
+      color: #4a4a4a;
+    }
+    h2, h3 {
+      margin-bottom: 15px;
+    }
+    p {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <div class="slide active" id="slide1">
+      <h2>✨ CHOOSE YOUR WAY...</h2>
+      <p>👉 You’re on a journey through life. Your choices determine your destiny.<br/> 📱 Tap to begin your adventure!</p>
+      <p>✝️ By the end, you’ll discover something eternal...</p>
+      <button class="btn" onclick="nextSlide(2)">Begin ➔</button>
+    </div>
+
+    <div class="slide" id="slide2">
+      <h3>You’ve made a mistake. What do you do?</h3>
+      <button class="option" onclick="nextSlide(3)">A) Cover it up 😬</button>
+      <button class="option" onclick="nextSlide(3)">B) Admit it honestly 🪢</button>
+      <button class="option" onclick="nextSlide(3)">C) Blame others 🤷</button>
+    </div>
+
+    <div class="slide" id="slide3">
+      <h3>Interesting... but what does the Bible say?</h3>
+      <div class="verse">📖 Romans 3:23<br/>"For all have sinned and fall short of the glory of God."
+      </div>
+      <p>💭 We’ve all failed—but there’s good news coming!</p>
+      <button class="btn" onclick="nextSlide(4)">Continue ➔</button>
+    </div>
+
+    <div class="slide" id="slide4">
+      <h3>What does our failure deserve?</h3>
+      <button class="option" onclick="nextSlide(5)">A) A second chance?</button>
+      <button class="option" onclick="nextSlide(5)">B) Punishment?</button>
+      <button class="option" onclick="nextSlide(5)">C) Nothing?</button>
+    </div>
+
+    <div class="slide" id="slide5">
+      <div class="verse">📖 Romans 6:23<br/>"The wages of sin is death..."
+      </div>
+      <p>😱 That’s heavy. But don’t stop here. There’s a surprise coming.</p>
+      <button class="btn" onclick="nextSlide(6)">Next ➔</button>
+    </div>
+
+    <div class="slide" id="slide6">
+      <div class="verse">📖 Romans 6:23 (cont.)<br/>"But the gift of God is eternal life through Jesus Christ our Lord."
+      </div>
+      <p>🏱 God offers you a GIFT. You don’t earn gifts. You receive them.</p>
+      <button class="btn" onclick="nextSlide(7)">Tap to claim yours ➔</button>
+    </div>
+
+    <div class="slide" id="slide7">
+      <div class="verse">📖 Romans 5:8<br/>"But God shows his love for us in this: While we were still sinners, Christ died for us."
+      </div>
+      <p>🩸 Jesus paid it all... while you were still far from Him.</p>
+      <button class="btn" onclick="nextSlide(8)">Next ➔</button>
+    </div>
+
+    <div class="slide" id="slide8">
+      <div class="verse">📖 Romans 10:9<br/>"If you declare with your mouth, ‘Jesus is Lord,’ and believe in your heart that God raised him from the dead, you will be saved."
+      </div>
+      <p>🚪 It’s about faith, not works.<br/>Will you believe?</p>
+      <button class="btn" onclick="nextSlide(9)">Yes, I Believe ➔</button>
+    </div>
+
+    <div class="slide" id="slide9">
+      <h3>🚔 Your Moment: Say this with your heart…</h3>
+      <p>"Jesus, I believe You died for me.<br/>I believe You rose again.<br/>You are Lord and Savior.<br/>I give You my life. Amen."</p>
+      <p>✝️ If you prayed that, welcome to new life!</p>
+      <p>📩 <strong>DM me to talk more 💬</strong></p>
+      <button class="btn" onclick="nextSlide(10)">Final Slide ➔</button>
+    </div>
+
+    <div class="slide" id="slide10">
+      <h2>🎉 CONGRATULATIONS!</h2>
+      <p>You chose the path of life!</p>
+      <p>🌟 Eternal life is yours through Jesus.</p>
+      <p>📖 Want to know Him deeper?<br/>Join a Bible Study or message me.</p>
+      <p>#JesusIsLord #RomansRoad #FaithOverFear</p>
+    </div>
+  </div>
+
+  <script>
+    function nextSlide(number) {
+      document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
+      document.getElementById('slide' + number).classList.add('active');
+    }
+  </script>
+</body>
+</html>
