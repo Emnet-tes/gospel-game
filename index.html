@@ -20,11 +20,13 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      padding: 20px;
     }
     .slide {
       max-width: 500px;
       width: 90%;
-      height: 60vh;
+      height: auto;
+      /* min-height: 60vh; */
       padding: 30px;
       background: #fff9f0;
       border-radius: 20px;
@@ -32,7 +34,13 @@
       text-align: center;
       display: none;
       transition: all 0.5s ease-in-out;
-      /* overflow-y: auto; */
+      margin: auto;
+    }
+    @media screen and (max-width: 768px) {
+      .slide {
+        min-height: 40vh;
+        padding: 20px;
+      }
     }
     .active {
       display: block;
@@ -70,16 +78,16 @@
 <body>
   <div id="game">
     <div class="slide active" id="slide1">
-      <h2>✨ CHOOSE YOUR WAY...</h2>
-      <p>👉 You’re on a journey through life. Your choices determine your destiny.<br/> 📱 Tap to begin your adventure!</p>
-      <p>✝️ By the end, you’ll discover something eternal...</p>
+      <h2>CHOOSE YOUR WAY...</h2>
+      <p>👉 You're on a journey through life. Your choices determine your destiny.<br/> 📱 Tap to begin your adventure!</p>
+      <p>By the end, you'll discover something eternal...</p>
       <button class="btn" onclick="nextSlide(2)">Begin ➔</button>
     </div>
 
     <div class="slide" id="slide2">
-      <h3>You’ve made a mistake. What do you do?</h3>
+      <h3>You've made a mistake. What do you do?</h3>
       <button class="option" onclick="nextSlide(3)">A) Cover it up 😬</button>
-      <button class="option" onclick="nextSlide(3)">B) Admit it honestly 🪢</button>
+      <button class="option" onclick="nextSlide(3)">B) Admit it honestly</button>
       <button class="option" onclick="nextSlide(3)">C) Blame others 🤷</button>
     </div>
 
@@ -87,7 +95,7 @@
       <h3>Interesting... but what does the Bible say?</h3>
       <div class="verse">📖 Romans 3:23<br/>"For all have sinned and fall short of the glory of God."
       </div>
-      <p>💭 We’ve all failed—but there’s good news coming!</p>
+      <p>💭 We've all failed—but there's good news coming!</p>
       <button class="btn" onclick="nextSlide(4)">Continue ➔</button>
     </div>
 
@@ -101,14 +109,14 @@
     <div class="slide" id="slide5">
       <div class="verse">📖 Romans 6:23<br/>"The wages of sin is death..."
       </div>
-      <p>😱 That’s heavy. But don’t stop here. There’s a surprise coming.</p>
+      <p>😱 That's heavy. But don't stop here. There's a surprise coming.</p>
       <button class="btn" onclick="nextSlide(6)">Next ➔</button>
     </div>
 
     <div class="slide" id="slide6">
       <div class="verse">📖 Romans 6:23 (cont.)<br/>"But the gift of God is eternal life through Jesus Christ our Lord."
       </div>
-      <p>🏱 God offers you a GIFT. You don’t earn gifts. You receive them.</p>
+      <p>🏱 God offers you a GIFT. You don't earn gifts. You receive them.</p>
       <button class="btn" onclick="nextSlide(7)">Tap to claim yours ➔</button>
     </div>
 
@@ -120,9 +128,9 @@
     </div>
 
     <div class="slide" id="slide8">
-      <div class="verse">📖 Romans 10:9<br/>"If you declare with your mouth, ‘Jesus is Lord,’ and believe in your heart that God raised him from the dead, you will be saved."
+      <div class="verse">📖 Romans 10:9<br/>"If you declare with your mouth, 'Jesus is Lord,' and believe in your heart that God raised him from the dead, you will be saved."
       </div>
-      <p>🚪 It’s about faith, not works.<br/>Will you believe?</p>
+      <p>🚪 It's about faith, not works.<br/>Will you believe?</p>
       <button class="btn" onclick="nextSlide(9)">Yes, I Believe ➔</button>
     </div>
 
